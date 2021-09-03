@@ -1,3 +1,10 @@
+/*
+* Prefixed by https://autoprefixer.github.io
+* PostCSS: v8.3.6,
+* Autoprefixer: v10.3.1
+* Browsers: last 4 version
+*/
+
 
 /* ----- Fonts ----- */
 
@@ -19,7 +26,8 @@
 /* ----- Universal styles ----- */
 
 html {
-    box-sizing: border-box;
+    -webkit-box-sizing: border-box;
+            box-sizing: border-box;
     background-color: var(--black);
     color: var(--white);
 }
@@ -27,7 +35,8 @@ html {
 *, *::before, *::after {
     margin: 0;
     padding: 0;
-    box-sizing: inherit;
+    -webkit-box-sizing: inherit;
+            box-sizing: inherit;
 }
 
 :root {
@@ -36,6 +45,11 @@ html {
     --black: #111111;
     --gray: #858585;
     --max: 85%;
+}
+
+::-moz-selection {
+    background-color: var(--red);
+    color: var(--white);
 }
 
 ::selection {
@@ -95,9 +109,15 @@ span a {
 /* ----- Navigation styles ----- */
 
 .nav {
+    display: -webkit-box;
+    display: -ms-flexbox;
     display: flex;
-    justify-content: space-between;
-    align-items: center;
+    -webkit-box-pack: justify;
+        -ms-flex-pack: justify;
+            justify-content: space-between;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
     max-width: var(--max);
     margin: 50px auto 0 auto;
 }
@@ -175,9 +195,13 @@ h4 {
 }
 
 .icons, .locations {
+    display: -webkit-box;
+    display: -ms-flexbox;
     display: flex;
     gap: 2em;
-    align-items: center;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
     font-size: 1.25em;
 }
 
@@ -199,11 +223,13 @@ h4 {
 }
 
 .blur {
+    display: -ms-grid;
     display: grid;
     place-items: center;
     width: 100%;
     height: 100%;
-    backdrop-filter: blur(10px) brightness(0.8);
+    -webkit-backdrop-filter: blur(10px) brightness(0.8);
+            backdrop-filter: blur(10px) brightness(0.8);
 }
 
 /* ----- Responsive Styles ----- */
@@ -219,7 +245,9 @@ h4 {
     }
 
     .list {
-        columns: 2;
+        -webkit-columns: 2;
+           -moz-columns: 2;
+                columns: 2;
 
     }
 
@@ -262,15 +290,26 @@ h4 {
     }
 
     .contact {
+        display: -webkit-box;
+        display: -ms-flexbox;
         display: flex;
-        justify-content: space-between;
-        align-items: center;
+        -webkit-box-pack: justify;
+            -ms-flex-pack: justify;
+                justify-content: space-between;
+        -webkit-box-align: center;
+            -ms-flex-align: center;
+                align-items: center;
     }
 
     .right {
+        display: -webkit-box;
+        display: -ms-flexbox;
         display: flex;
-        flex-wrap: wrap;
-        justify-content: flex-end;
+        -ms-flex-wrap: wrap;
+            flex-wrap: wrap;
+        -webkit-box-pack: end;
+            -ms-flex-pack: end;
+                justify-content: flex-end;
         max-width: 40%;
     }
 
@@ -307,8 +346,12 @@ h4 {
     }
 
     .list {
+        display: -webkit-box;
+        display: -ms-flexbox;
         display: flex;
-        justify-content: space-between;
+        -webkit-box-pack: justify;
+            -ms-flex-pack: justify;
+                justify-content: space-between;
     }
 
     h4 {
@@ -377,29 +420,43 @@ h4 {
 /* ----- Animations / Transitions ----- */
 
 :is(.nav img, .nav a, .img-carousel, h4, .icons i, footer a) {
+    -webkit-transition: color 0.3s, -webkit-transform 0.3s;
+    transition: color 0.3s, -webkit-transform 0.3s;
+    -o-transition: transform 0.3s, color 0.3s;
     transition: transform 0.3s, color 0.3s;
+    transition: transform 0.3s, color 0.3s, -webkit-transform 0.3s;
     cursor: pointer; /* <-- Don't actually need this once links work */
 }
 
 .nav img:hover {
-    transform: scale(125%);
+    -webkit-transform: scale(125%);
+        -ms-transform: scale(125%);
+            transform: scale(125%);
 }
 
 .nav a:hover, footer a:hover {
-    transform: translateX(10px);
+    -webkit-transform: translateX(10px);
+        -ms-transform: translateX(10px);
+            transform: translateX(10px);
 }
 
 .img-carousel:hover {
-    transform: scale(98%) !important;
+    -webkit-transform: scale(98%) !important;
+        -ms-transform: scale(98%) !important;
+            transform: scale(98%) !important;
 }
 
 h4:hover {
-    transform: scale(110%);
+    -webkit-transform: scale(110%);
+        -ms-transform: scale(110%);
+            transform: scale(110%);
 }
 
 .icons i:hover {
     color: var(--gray);
-    transform: scale(125%);
+    -webkit-transform: scale(125%);
+        -ms-transform: scale(125%);
+            transform: scale(125%);
 }
 
 /* Animations for the Image Slideshow */
@@ -431,4 +488,3 @@ h4:hover {
 .img-carousel > *:nth-child(11) {animation-delay: 2.75s}
 
 */
-
