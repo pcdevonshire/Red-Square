@@ -8,11 +8,12 @@
     <title>Red Square — The agency for what comes next.</title>
     <link rel="icon" href="images/favicon.ico">
     <link href="http://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.3.0/css/font-awesome.css" rel="stylesheet" type='text/css'>
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
     <link rel="stylesheet" type="text/css" href="styles.css">
 </head>
 <body>
     
-    <header>
+    <header data-aos="fade">
         <nav class="nav">
             <img src="images/logo.png" alt="Red Square Logo" width="30px" height="30px">
             <a href="#">Work <i class="fa fa-chevron-right"></i></a>
@@ -20,10 +21,10 @@
     </header>
 
     <main>
-        <div class="hero-text">
+        <div class="hero-text" data-aos="fade">
             <h1>The agency for<br>what comes next.</h1>
         </div>
-        <div class="img-carousel">
+        <div class="img-carousel" data-aos="fade-up">
             <picture>
                 <source srcset="images/1.avif" type="image/avif">
                 <source srcset="images/1.webp" type="image/webp">
@@ -85,12 +86,12 @@
                 <img src="images/12.jpg" alt="">
             </picture> -->
         </div>
-        <section class="main-text">
+        <section class="main-text" data-aos="fade-up">
             <h2>We deal in ideas, design and media that are category defying. When the world Millis, you’ve got to Vanilli.</h2>
             <p>Red Square believes in rigorous development of brand strategy and whip-smart execution. We make all sorts of things. Things that move markets, compel audiences and sell product. We help great brands create what comes next.</p>
         </section>
-        <hr>
-        <section class="list">
+        <hr data-aos="fade-right">
+        <section class="list" data-aos="fade-right">
             <h3>Select Clients</h3>
             <ul>
                 <li>Cedars-Sinai</li>
@@ -115,8 +116,8 @@
                 <li>Wind Creek Hospitality</li>
             </ul>
         </section>
-        <hr>
-        <section class="contact">
+        <hr data-aos="fade-right">
+        <section class="contact" data-aos="fade-up">
             <h4>Let's talk.<br><span><a href="mailto:hi@rsq.com">hi@rsq.com</a></span></h4>
             <div class="right">
                 <div class="icons">
@@ -141,5 +142,7 @@
         </div>
     </footer>
 
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script>AOS.init({ disable: 'mobile', duration: 800, once: true, });</script>
 </body>
 </html>

@@ -390,7 +390,7 @@ h4 {
 }
 
 .img-carousel:hover {
-    transform: scale(98%);
+    transform: scale(98%) !important;
 }
 
 h4:hover {
