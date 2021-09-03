@@ -1,0 +1,434 @@
+
+/* ----- Fonts ----- */
+
+@font-face {
+    font-family: Circular-Book;
+    src: url(fonts/CircularStd-Book.otf);
+}
+
+@font-face {
+    font-family: Circular-Bold;
+    src: url(fonts/CircularStd-Bold.otf);
+}
+
+@font-face {
+    font-family: YoungSerif-Regular;
+    src: url(fonts/YoungSerif-Regular.otf);
+}
+
+/* ----- Universal styles ----- */
+
+html {
+    box-sizing: border-box;
+    background-color: var(--black);
+    color: var(--white);
+}
+
+*, *::before, *::after {
+    margin: 0;
+    padding: 0;
+    box-sizing: inherit;
+}
+
+:root {
+    --red: #e31e3c;
+    --white: #fefefe;
+    --black: #111111;
+    --gray: #858585;
+    --max: 85%;
+}
+
+::selection {
+    background-color: var(--red);
+    color: var(--white);
+}
+
+/* ----- Hide scrollbar ----- */
+
+body {
+    margin: 0 auto;
+    height: 100vh;
+    min-width: 280px;
+    max-width: 1980px;
+    overflow-x: hidden;
+    overflow-y: scroll;
+    scrollbar-width: none;
+    -ms-overflow-style: none;
+}
+
+body::-webkit-scrollbar {
+    width: 0;
+    height: 0;
+}
+
+img {
+    display: block;
+    max-width: 100%;
+    height: auto;
+}
+
+h1 {
+    font-family: YoungSerif-Regular;
+}
+
+a,p,h3,li,h5 {
+    font-family: Circular-Book;
+}
+
+h2, h4 {
+    font-family: Circular-Bold;
+}
+
+h3, h5, .fa-chevron-right {
+    color: var(--gray);
+}
+
+a {
+    text-decoration: none;
+    color: var(--white);
+}
+
+span a {
+    color: var(--red);
+}
+
+/* ----- Navigation styles ----- */
+
+.nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    max-width: var(--max);
+    margin: 50px auto 0 auto;
+}
+
+/* ----- Hero styles ----- */
+
+.hero-text {
+    max-width: var(--max);
+    margin: 50% auto 0 auto;
+    font-size: 1.15em;
+}
+
+/* ----- Carousel styles ----- */
+
+.img-carousel {
+    margin: 10% auto;
+    /* position: relative;
+    height: 45vw;
+    overflow-y: hidden; */
+}
+
+/* ----- Main text styles ----- */
+
+.main-text {
+    max-width: var(--max);
+    margin: 0 auto;
+}
+
+h2 {
+    font-size: 1.75em;
+    line-height: 1.25;
+}
+
+p {
+    font-size: 1.4em;
+    margin-top: 10%;
+    line-height: 1.5;
+}
+
+hr {
+    border: 1px solid var(--gray);
+    margin: 10% auto;
+    max-width: var(--max);
+}
+
+/* ----- List styles ----- */
+
+.list {
+    max-width: var(--max);
+    margin: 0 auto;
+}
+
+h3 {
+    margin-bottom: 5%;
+}
+
+ul {
+    list-style-type: none;
+}
+
+li {
+    font-size: 1.5em;
+    line-height: 1.5;
+}
+
+/* ----- Contact styles ----- */
+
+.contact {
+    max-width: var(--max);
+    margin: 0 auto 10% auto;
+}
+
+h4 {
+    font-size: 2em;
+}
+
+.icons, .locations {
+    display: flex;
+    gap: 2em;
+    align-items: center;
+    font-size: 1.25em;
+}
+
+.icons {
+    margin: 10% 0;
+}
+
+.locations {
+    margin-top: 10%;
+    line-height: 1.5;
+}
+
+/* ----- Footer styles ----- */
+
+.footer {
+    background-image: url(images/1.jpg);
+    background-size: cover;
+    height: 7.5em;
+}
+
+.blur {
+    display: grid;
+    place-items: center;
+    width: 100%;
+    height: 100%;
+    backdrop-filter: blur(10px) brightness(0.8);
+}
+
+/* ----- Responsive Styles ----- */
+
+@media only screen and (min-width: 40em) {
+    
+    .nav {
+        margin-top: 75px;
+    }
+
+    .nav a {
+        font-size: 1.25em;
+    }
+
+    .list {
+        columns: 2;
+
+    }
+
+    h4 {
+        font-size: 4em;
+    }
+
+    .footer {
+        max-width: 85%;
+        margin: 25% auto 0 auto;
+        height: 3.75em;
+    }
+
+}
+
+@media only screen and (min-width: 48em) {
+
+    h1 {
+        font-size: 3.5em;
+    }
+
+    .hero-text {
+        margin-top: 40%;
+    }
+
+    h2 {
+        font-size: 3em;
+    }
+
+    p {
+        font-size: 1.5em;
+    }
+
+}
+
+@media only screen and (min-width: 59em) {
+
+    .hero-text {
+        margin-top: 30%;
+    }
+
+    .contact {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+    }
+
+    .right {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: flex-end;
+        max-width: 40%;
+    }
+
+    .locations {
+        margin-top: 0;
+    }
+
+}
+
+@media only screen and (min-width: 64em) {
+
+    :root {
+        --max: 75%;
+    }
+
+    .nav {
+        margin-top: 100px;
+    }
+
+    .hero-text {
+        margin-top: 20%;
+    }
+
+    h1 {
+        font-size: 6vw;
+    }
+
+    .img-carousel {
+        max-width: 90%;
+    }
+
+    .img-carousel img {
+        border-radius: 5px;
+    }
+
+    .list {
+        display: flex;
+        justify-content: space-between;
+    }
+
+    h4 {
+        font-size: 2.25em;
+    }
+
+    .right {
+        max-width: 45%;
+    }
+
+    .footer {
+        max-width: 90%;
+        margin-top: 15%;
+    }
+
+}
+
+@media only screen and (min-width: 73em) {
+
+    h4 {
+        font-size: 4em;
+    }
+
+    .right {
+        max-width: 40%;
+    }
+
+}
+
+@media only screen and (min-width: 90em) {
+
+    :root {
+        --max: 65%;
+    }
+
+    .hero-text {
+        margin-top: 10%;
+    }
+
+    h1 {
+        font-size: 5em;
+    }
+
+    .img-carousel {
+        max-width: 85%;
+    }
+
+    .footer {
+        max-width: 85%;
+    }
+
+}
+
+@media only screen and (min-width: 95em) {
+
+    .right {
+        max-width: 35%;
+    }
+
+    .footer {
+        margin-top: 10%;
+    }
+
+}
+
+/* ----- Animations / Transitions ----- */
+
+:is(.nav img, .nav a, .img-carousel, h4, .icons i, footer a) {
+    transition: transform 0.3s, color 0.3s;
+    cursor: pointer; /* <-- Don't actually need this once links work */
+}
+
+.nav img:hover {
+    transform: scale(125%);
+}
+
+.nav a:hover, footer a:hover {
+    transform: translateX(10px);
+}
+
+.img-carousel:hover {
+    transform: scale(98%);
+}
+
+h4:hover {
+    transform: scale(110%);
+}
+
+.icons i:hover {
+    color: var(--gray);
+    transform: scale(125%);
+}
+
+/* Animations for the Image Slideshow */
+
+/* .img-carousel > * {
+    animation: 2.75s autoplay infinite linear;
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: 0;
+}
+
+@keyframes autoplay {
+    from {z-index: 0}
+    to {z-index: 1}
+  }
+
+.img-carousel > *:nth-child(0) {animation-delay: 0s}
+.img-carousel > *:nth-child(1) {animation-delay: 0.25s}
+.img-carousel > *:nth-child(2) {animation-delay: 0.5s}
+.img-carousel > *:nth-child(3) {animation-delay: 0.75s}
+.img-carousel > *:nth-child(4) {animation-delay: 1s}
+.img-carousel > *:nth-child(5) {animation-delay: 1.25s}
+.img-carousel > *:nth-child(6) {animation-delay: 1.5s}
+.img-carousel > *:nth-child(7) {animation-delay: 1.75s}
+.img-carousel > *:nth-child(8) {animation-delay: 2s}
+.img-carousel > *:nth-child(9) {animation-delay: 2.25s}
+.img-carousel > *:nth-child(10) {animation-delay: 2.5s}
+.img-carousel > *:nth-child(11) {animation-delay: 2.75s}
+
+*/
+
